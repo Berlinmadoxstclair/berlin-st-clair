@@ -1,26 +1,47 @@
 @import "tailwindcss";
 
+@theme {
+  /* Map variables to Tailwind classes */
+  --color-void: #0f0e0e;
+  --color-bone: #e0dedb;
+  --color-concrete: #6b665f;
+  
+  --font-voice: var(--font-voice);
+  --font-data: var(--font-data);
+  
+  --ease-heavy: cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* FIX: Define Z-Indices so they aren't "arbitrary" values */
+  --z-100: 100;
+  --z-1000: 1000;
+  --z-9999: 9999;
+  --z-10000: 10000;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --void: #0f0e0e;
+  --bone: #e0dedb;
+  --concrete: #6b665f;
+  --font-voice: 'Cormorant Garamond', serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0f0e0e !important;
+  color: #e0dedb;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--bone);
+  color: var(--void);
+}
+
+.layout-wrapper {
+  width: 100%;
+  min-height: 100vh;
 }
